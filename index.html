@@ -10,62 +10,57 @@
 
 <div class="page">
   <main class="main">
-<audio id="musica-fondo" loop>
-  <source src="css/audio.mpeg" type="audio/mpeg" />
-  Tu navegador no soporta el elemento de audio.
-</audio>
-
-<script>
-  window.addEventListener('click', () => {
-    const reproductor = document.getElementById('musica-fondo');
-    // Verificamos si ya está sonando para no reiniciarla en cada clic
-    if (reproductor.paused) {
-      reproductor.play().catch(error => {
-        console.log("El navegador bloqueó el autoplay inicialmente:", error);
-      });
-    }
-  });
-</script>
-<div class="grid-section">
-  <div class="gif-grid">
     
-    <div class="gif-cell" data-slot="0">
-      <img src="css/gif1.gif" alt="GIF 1" />
-    </div>
-    <div class="gif-cell" data-slot="1">
-      <img src="css/gif2.gif" alt="GIF 2" />
-    </div>
-    <div class="gif-cell" data-slot="2">
-      <img src="css/gif3.gif" alt="GIF 3" />
-    </div>
-    <div class="gif-cell" data-slot="3">
-      <img src="css/gif4.gif" alt="GIF 4" />
-    </div>
-    <div class="gif-cell" data-slot="4">
-      <img src="css/gif5.gif" alt="GIF 5" />
-    </div>
-    <div class="gif-cell" data-slot="5">
-      <img src="css/gif6.gif" alt="GIF 6" />
-    </div>
+    <audio id="musica-fondo" loop>
+      <source src="css/audio.mpeg" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
 
-    <div class="gif-cell gif-cell--centered" data-slot="6">
-      <img src="css/gif7.gif" alt="GIF 7" />
-    </div>
+    <script>
+      window.addEventListener('click', () => {
+        const reproductor = document.getElementById('musica-fondo');
+        if (reproductor.paused) {
+          reproductor.play().catch(error => {
+            console.log("El navegador bloqueó el autoplay inicialmente:", error);
+          });
+        }
+      });
+    </script>
 
-  </div>
-</div>
-
-    <!-- Rectángulo horizontal / banner -->
-    <div class="banner-section">
-      <div class="banner gif-cell" data-slot="banner">
-        <img src="css/bannerhorizontal.gif" alt="Banner horizontal" />
+    <div class="banner-section banner-top">
+      <div class="gif-cell" data-slot="banner-top">
+        <img src="css/banner1.gif" alt="Banner Superior" />
       </div>
     </div>
 
-    <!-- Rectángulo vertical inferior izquierdo -->
-    <div class="vertical-section">
-      <div class="vertical-rect gif-cell" data-slot="vertical">
-        <img src="css/rectangulovertical.gif" alt="Rectángulo vertical" />
+    <div class="grid-section">
+      <div class="gif-grid">
+        
+        <div class="gif-cell" data-slot="0"><img src="css/gif1.gif" alt="GIF 1" /></div>
+        <div class="gif-cell" data-slot="1"><img src="css/gif2.gif" alt="GIF 2" /></div>
+        
+        <div class="gif-cell" data-slot="2"><img src="css/gif3.gif" alt="GIF 3" /></div>
+        <div class="gif-cell" data-slot="3"><img src="css/gif4.gif" alt="GIF 4" /></div>
+        
+        <div class="gif-cell" data-slot="4"><img src="css/gif5.gif" alt="GIF 5" /></div>
+        <div class="gif-cell" data-slot="5"><img src="css/gif6.gif" alt="GIF 6" /></div>
+
+        <div class="gif-cell" data-slot="6"><img src="css/gif66.gif" alt="GIF 7" /></div>
+        <div class="gif-cell" data-slot="7"><img src="css/gif7.gif" alt="GIF 8" /></div>
+
+      </div>
+    </div>
+
+    <div class="banner-section banner-bottom">
+      <div class="gif-cell" data-slot="banner-bottom">
+        <img src="css/banne2.gif" alt="Banner horizontal" />
+      </div>
+    </div>
+
+    <div class="grid-section">
+      <div class="gif-grid">
+        <div class="gif-cell" data-slot="8"><img src="css/gif9.gif" alt="GIF 9" /></div>
+        <div class="gif-cell" data-slot="9"><img src="css/gif10.gif" alt="GIF 10" /></div>
       </div>
     </div>
 
