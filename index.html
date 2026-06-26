@@ -20,28 +20,21 @@
 
 </audio>
 
-
-
 <script>
-
   window.addEventListener('click', () => {
-
     const reproductor = document.getElementById('musica-fondo');
-
-    // Verificamos si ya está sonando para no reiniciarla en cada clic
-
-    if (reproductor.paused) {
-
-      reproductor.play().catch(error => {
-
-        console.log("El navegador bloqueó el autoplay inicialmente:", error);
-
-      });
-
+    
+    if (reproductor && reproductor.paused) {
+      reproductor.play()
+        .then(() => {
+          console.log("Reproducción iniciada correctamente.");
+        })
+        .catch(error => {
+          console.error("Error al intentar reproducir:", error);
+        });
     }
-
   });
-    </script>
+</script>
 
     <div class="banner-section banner-top">
       <div class="gif-cell" data-slot="banner-top">
