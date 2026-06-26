@@ -1,10 +1,9 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
-  background: #111;
+  background: #1e1e1e;
   color: #f0f0f0;
   font-family: system-ui, sans-serif;
   min-height: 100vh;
+  margin: 0;
 }
 
 .page {
@@ -15,16 +14,41 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  gap: 12px;
+  padding: 40px 20px; 
+  gap: 35px;          /* Un poco más de aire entre secciones */
 }
-/* ── Grilla 2×3 + 7mo centrado ── */
+
+/* ── Banners Modificados ── */
+.banner-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Banner del principio: márgenes grandes a los costados (más contenido) */
+.banner-top .gif-cell {
+  width: 100%;
+  max-width: 950px; 
+  aspect-ratio: 16 / 5; 
+  height: auto;
+}
+
+/* Banner horizontal del medio: Agrandado y más ancho que la grilla */
+.banner-bottom .gif-cell {
+  width: 80%;
+  max-width: 1100px; /* Se expande más hacia los laterales */
+  aspect-ratio: 16 / 3.5; /* Más estilizado y alto */
+  height: auto;
+}
+
+/* ── Grilla de Cuadrados (Más chicos) ── */
 .gif-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Crea las 2 columnas iguales */
-  gap: 15px;                             /* Espacio entre los bloques */
-  max-width: 900px;                      /* Ancho máximo de la grilla en la pantalla */
-  margin: 0 auto;                        /* Centra todo el contenedor en la web */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px;                             
+  max-width: 750px;                     /* Se achicó de 1000px a 850px para reducir los cuadrados */
+  margin: 0 auto;                        
+  width: 100%;
 }
 
 .gif-cell {
@@ -35,9 +59,7 @@ body {
   position: relative;
   cursor: pointer;
   transition: border-color 0.2s;
-  
-  /* Mantiene las celdas con una proporción cuadrada perfecta (1 de ancho por 1 de alto) */
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1;  
 }
 
 .gif-cell:hover {
@@ -47,31 +69,8 @@ body {
 .gif-cell img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cambialo a 'contain' si preferís que el dibujo se achique en vez de recortarse */
+  object-fit: cover; 
   display: block;
-}
-/* Reemplazá solo este bloque al final de tu CSS */
-.gif-cell.gif-cell--centered {
-  grid-column: span 2;
-  justify-self: center;
-  width: calc(50% - 7.5px); /* Resta la mitad del gap (15px / 2) para que calce perfecto */
-  max-width: 100%;
-}
-.banner-section .gif-cell {
-  width: 1473px;
-  height: 500px;
-}
-
-
-/* ── Rectángulo vertical inferior izquierdo ── */
-.vertical-section {
-  display: flex;
-  align-items: flex-start;
-}
-
-.vertical-rect {
-  width: 200px;
-  height: 320px;
 }
 
 /* ── Modal de URL ── */
